@@ -28,6 +28,7 @@ public class MoveZerosToEnd {
 		int arr[] = { 0, 1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9 };
 		printArray(arr);
 		moveZerosToEnd(arr);
+		System.out.println("==============================");
 		printArray(arr);
 	}
 }
