@@ -21,11 +21,42 @@ public class RemoveDuplicates {
 
 	}
 
+//	========================> Efficient Solution <==============================
+
+	static int remDups(int[] arr) {
+		int n = arr.length;
+		int size = 1;
+		for (int i = 1; i < n; i++) {
+			if (arr[size - 1] != arr[i]) {
+				arr[size] = arr[i];
+				size++;
+			}
+		}
+		return size;
+	}
+
 	public static void main(String[] args) {
 		int[] arr = { 10, 20, 20, 20, 20, 20, 10, 20, 30, 30, 40, 30, 40 };
-		int n = removeDuplicate(arr);
-		for (int i = 0; i < n; i++) {
+
+//		int n = removeDuplicate(arr);
+//
+//		System.out.println(n);
+//
+//		for (int i = 0; i < n; i++) {
+//			System.out.print(arr[i] + " ");
+//		}
+
+		System.out.println();
+
+		System.out.println("=============================================");
+
+		int size = remDups(arr);
+
+		System.out.println(size);
+
+		for (int i = 0; i < size; i++) {
 			System.out.print(arr[i] + " ");
 		}
+
 	}
 }
