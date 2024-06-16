@@ -38,6 +38,23 @@ public class LeftRotateByDTimes {
 		}
 	}
 
+//	=================================> Method 3 <================================
+
+	static void reverse(int[] arr, int low, int high) {
+		while (low < high) {
+			int temp = arr[low];
+			arr[low] = arr[high];
+			arr[high] = temp;
+			low++;
+			high--;
+		}
+	}
+
+	static void leftRotate(int[] arr, int n, int d) {
+		reverse(arr, 0, d - 1);
+		reverse(arr, d, n - 1);
+		reverse(arr, 0, n - 1);
+	}
 //	================================================================
 
 	static void printArray(int[] arr) {
@@ -56,12 +73,19 @@ public class LeftRotateByDTimes {
 		printArray(arr1);
 
 		System.out.println("====================================");
-		
+
 		int[] arr2 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		
+
 		printArray(arr2);
 		leftRotateByDTimes(arr2, d);
 		printArray(arr2);
 
+		System.out.println("====================================");
+
+		int[] arr3 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		int n = arr3.length;
+		printArray(arr3);
+		leftRotate(arr3, n, d);
+		printArray(arr3);
 	}
 }
